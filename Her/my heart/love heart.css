@@ -1,0 +1,65 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#lovetext {
+  font-size: 2.5rem;
+  color: red;
+  text-shadow: 2px 1px 5px black;
+  z-index: 10;
+  position: absolute;
+  margin-top: -15px;
+  transform: translate(-500%);
+  animation: slide 3s forwards, appear 2s 3s forwards;
+}
+.heart {
+  opacity: 0;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  animation: appear 2s 3s forwards, beat 1.5s 5s alternate infinite;
+  margin-top: 7%;
+}
+.heart:after,
+.heart:before {
+  background-color: salmon;
+  transform-origin: 0 100%;
+  transform: rotate(-50deg);
+  left: 50%;
+  top: 0;
+  position: absolute;
+  background: salmon;
+  border-radius: 70px 70px 0 0;
+  content: " ";
+  width: 50%;
+  height: 80%;
+}
+.heart:after {
+  transform: rotate(50deg);
+  top: 0;
+  left: 0;
+  transform-origin: 100% 100%;
+}
+@keyframes slide {
+  100% {
+    transform: translate(0%);
+  }
+}
+@keyframes appear {
+  100% {
+    opacity: 1;
+    color: white;
+  }
+}
+@keyframes beat {
+  100% {
+    transform: scale(1.9);
+  }
+}
+audio{
+  display: none;
+}
